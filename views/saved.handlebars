@@ -22,15 +22,13 @@
                   {{/if}}
                </div>
             </div>
-            <div class="col-4 text-center">
+            <div class="col-5 text-center">
                <img id="roll" class="rollImg" data-roll="{{number}},{{type}},{{modifier}},{{damageNumber}},{{damageType}},{{damageModifier}}" src="/img/roll.png" onclick="savedRoll()">
             </div>
-            <div class="col-1 text-center">
-               <form method="POST" action="./{{id}}?_method=DELETE" >
-                  <input id="trash" type="image" src="/img/delete.png">
-               </form>
-            </div>
          </div>
+         <form method="POST" action="./{{id}}?_method=DELETE" >
+            <input id="trash" type="image" src="/img/delete.png">
+         </form>
       </div>
    {{else}}
    {{/each}}

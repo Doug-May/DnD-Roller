@@ -70,7 +70,7 @@ router.get('/add', ensureAuthenticated, (req, res) => {
       } else {
          res.render('add');
       }
-   });   
+   });
 });
 
 //register form POST
@@ -156,21 +156,21 @@ router.post('/add', (req, res) => {
    if(req.body.includeDamage) {
       var newRoll = {
          name: req.body.name,
-         number: req.body.number,
+         number: req.body.number || 1,
          type: req.body.type,
-         modifier: req.body.modifier,
-         damageNumber: req.body.damageNumber,
+         modifier: req.body.modifier || 0,
+         damageNumber: req.body.damageNumber || 1,
          damageType: req.body.damageType,
-         damageModifier: req.body.damageModifier,
+         damageModifier: req.body.damageModifier || 0,
          user: req.user.id
 
       }
    } else {
       var newRoll = {
          name: req.body.name,
-         number: req.body.number,
+         number: req.body.number || 1,
          type: req.body.type,
-         modifier: req.body.modifier,
+         modifier: req.body.modifier || 0,
          user: req.user.id
       }
    }
