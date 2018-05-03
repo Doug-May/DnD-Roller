@@ -1,0 +1,47 @@
+{{#if matchError}}
+   <script type="text/javascript">
+      sweetAlert({title:"Passwords do not match!", confirmButtonColor:"#4e5b6d", confirmButtonText:"Try Again"});
+   </script>
+{{/if}}
+
+{{#if lengthError}}
+   <script type="text/javascript">
+      sweetAlert({title:"Password must be at least 6 characters.", confirmButtonColor:"#4e5b6d", confirmButtonText:"Try Again"});
+   </script>
+{{/if}}
+
+{{#if newUserSuccess}}
+   <script type="text/javascript">
+      sweetAlert({title:"Success! You can now log in.", confirmButtonColor:"#4e5b6d", confirmButtonText:"OK"});
+   </script>
+{{/if}}
+
+{{#if emailError}}
+   <script type="text/javascript">
+      sweetAlert({title:"Email already registered!", confirmButtonColor:"#4e5b6d", confirmButtonText:"Try Again"});
+   </script>
+{{/if}}
+
+{{#if error}}
+   <script type="text/javascript">
+      sweetAlert({title:"Incorrect Email/Password", confirmButtonColor:"#4e5b6d", confirmButtonText:"Try Again"});
+   </script>
+{{/if}}
+
+{{#if loggedOut}}
+   <script type="text/javascript">
+      sweetAlert({title:"Successfully logged out!", confirmButtonColor:"#4e5b6d", confirmButtonText:"OK"});
+   </script>
+{{/if}}
+
+{{#if tooManyDice}}
+   <script type="text/javascript">
+      sweetAlert({title:"That's a lot of Dice! Why not just take the average?", confirmButtonColor:"#4e5b6d", confirmButtonText:"OK"});
+   </script>
+{{/if}}
+
+{{#if tooManyItems}}
+   <script type="text/javascript">
+      sweetAlert({title:"You can only have a max of 5 saved rolls.", confirmButtonColor:"#4e5b6d", confirmButtonText:"OK"});
+   </script>
+{{/if}}

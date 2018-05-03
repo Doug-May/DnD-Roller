@@ -1,0 +1,251 @@
+body {
+   margin: 0;
+   background-color: #181818;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+#logo{
+   width: 40px;
+   cursor: pointer;
+   margin-top: 20px;
+}
+
+#logo:hover{
+   opacity: 0.6;
+}
+
+#header{
+   height: 80px;
+}
+
+#header p{
+   margin-top: 30px;
+   float: right;
+   cursor: pointer;
+   font-size: 14px;
+}
+
+#header p:hover{
+   color: #4e5b6d;
+}
+
+#doug{
+   display: inline;
+   width: 60px;
+   margin: 20px 20px;
+}
+
+.accent {
+    background-color: #4e5b6d;
+    color: #4e5b6d;
+}
+
+h1,h2,h3,h4,h5,p {
+   font-family: 'Roboto Condensed', sans-serif;
+   margin: 20px 20px;
+   color: #8a8a8a;
+}
+
+h1 {
+   letter-spacing: 4px;
+   font-weight: 100;
+   font-size: 35px;
+}
+
+h2 {
+    letter-spacing: 4px;
+    font-size: 17px;
+}
+
+h3 {
+    opacity: 0.6;
+    letter-spacing: 2px;
+    font-weight: 100;
+    font-size: 12px;
+}
+
+p {
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+
+
+a:hover {
+    cursor: pointer;
+}
+
+p{
+   display: inline-block;
+   letter-spacing: 2px;
+}
+
+/* .rollData{
+   background-color: #ffffff;
+   border-radius: 10px;
+   padding: 10px 20px;
+   height: 280px;
+   margin-top: 20px;
+} */
+
+
+
+/* user login and register css */
+.userWindow{
+   margin: 20px 10px;
+   padding: 10px 10px;
+}
+
+.userWindow button{
+   outline: none;
+   border: none;
+   border-radius: 4px;
+   padding: 5px 8px;
+   cursor: pointer;
+   margin:auto;
+}
+
+.userWindow button:hover{
+   background-color: #313a47;
+}
+
+.block{
+   display: inline;
+}
+.userWindow p {
+   display: inline;
+   font-size: 12px;
+   color: #919191;
+   margin: 0px 2px;
+}
+
+.userWindow h1 {
+   font-size: 22px;
+   color: #4f4f4f;
+   margin: 0px 2px;
+}
+.userWindow h2 {
+   display: inline;
+   font-size: 14px;
+   color: #919191;
+   margin: 5px 2px;
+}
+
+.userWindow button p {
+   color: #d0d0d0;
+   margin: 4px 8px;
+}
+
+#trash{
+   width: 20px;
+   margin-top: 28px;
+}
+
+#roll{
+   cursor: pointer;
+   float: left;
+   width: 80px;
+}
+
+.red{
+   color: #b75054;
+}
+
+.blue {
+   color: #3649c9;
+}
+
+#createNew{
+   border: none;
+   outline: none;
+   cursor: pointer;
+   border-radius: 7px;
+   padding: 2px 4px;
+}
+
+#createNew:hover{
+   opacity: 0.6;
+}
+
+#createNew p {
+   margin: 7px 12px;
+}
+
+/* This is all css for the roller page */
+#inputs {
+margin-top: 40px;
+}
+
+#diceType, #number, #modifier {
+   outline: none;
+   border: none;
+   cursor: pointer;
+}
+
+#number, #modifier {
+   background-color: #d0d0d0;
+   width: 50px;
+   height: 35px;
+   border-radius: 5px;
+   padding-left: 12px;
+
+}
+
+#clear {
+   display: inline;
+   cursor: pointer;
+}
+
+#clear:hover{
+   color: #4e5b6d;
+}
+
+
+#number:focus, #modifier:focus {
+   background-color: white;
+}
+
+#diceType {
+   width: 80px;
+   height: 40px;
+   text-align: center;
+}
+
+#dice{
+   margin-top: 65px;
+   width: 100px;
+   cursor: pointer;
+}
+
+#inputs p{
+   display: inline;
+}
+
+#history h2{
+   margin: 15px 10px;
+   cursor: pointer;
+}
+
+#history h2:hover{
+   color: #4e5b6d;
+}
+
+#message {
+   visibility: hidden;
+}
+
+
+.roll{
+   animation: roll 300ms ease-in-out 1;
+}
+
+@keyframes roll {
+   0% {
+   }
+   100% {
+      transform: rotate(1440deg);
+   }
+}

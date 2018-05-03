@@ -1,0 +1,87 @@
+
+<div class="rollData container text-center" id="custom">
+   <h1>Saved Rolls</h1>
+</div>
+
+   {{#each rolls}}
+      <div class="userWindow card">
+         <div class="data" data-roll="{{number}},{{type}},{{modifier}},{{damageNumber}},{{damageType}},{{damageModifier}}">
+         </div>
+         <div class="row">
+            <div class="col-7 text-center">
+               <h1 id="rollName">{{name}}</h1>
+               <div style="display:block;">
+                  <h2><span class="blue">Roll:</span></h2>
+                  <p>({{number}})d{{type}}+{{modifier}}</p>
+               </div>
+               <div style="display:block;">
+                  {{#if damageNumber}}
+                  <h2><span class="red">Damage:</span></h2>
+                  <p>({{damageNumber}})d{{damageType}}+{{damageModifier}}</p>
+                  {{else}}
+                  {{/if}}
+               </div>
+            </div>
+            <div class="col-4 text-center">
+               <img id="roll" class="rollImg" data-roll="{{number}},{{type}},{{modifier}},{{damageNumber}},{{damageType}},{{damageModifier}}" src="/img/roll.png" onclick="savedRoll()">
+            </div>
+            <div class="col-1 text-center">
+               <form method="POST" action="./{{id}}?_method=DELETE" >
+                  <input id="trash" type="image" src="/img/delete.png">
+               </form>
+            </div>
+         </div>
+      </div>
+   {{else}}
+   {{/each}}
+
+
+   {{#if hideCreateButton}}
+   {{else}}
+      <div class="container text-center">
+         <a href="/users/add"><button class="accent" id="createNew"><p>Create New Roll</p></button></a>
+      </div>
+   {{/if}}
+
+
+<!-- //Lets run all the rollers from the saved rolls page client side -->
+<script>
+
+   function savedRoll(){
+
+      // first lets grab the data and parse into into an array of numbers
+      var thisDice = $(event.target);
+      var rollData = thisDice.attr('data-roll');
+      var dataArray = rollData.split(',').map(function(e){return parseInt(e);});
+
+      // we have to write for two cases, one with just the roll and one with damage as well
+      if (!dataArray[3]) {
+         thisDice.addClass("roll");
+         var rollTotal = 0;
+         for(i=0;i<dataArray[0];i++) {
+            rollTotal += Math.ceil(Math.random()*dataArray[1]);
+         }
+         rollTotal += dataArray[2];
+         setTimeout(function(){
+            thisDice.removeClass('roll');
+            sweetAlert({title:"Roll: " + rollTotal, confirmButtonColor:"#4e5b6d", confirmButtonText:"OK"});
+         },300);
+      } else {
+         thisDice.addClass("roll");
+         rollTotal = 0;
+         damageTotal = 0;
+         for(i=0;i<dataArray[0];i++) {
+            rollTotal += Math.ceil(Math.random()*dataArray[1]);
+         }
+         for(i=0;i<dataArray[3];i++) {
+            damageTotal += Math.ceil(Math.random()*dataArray[4]);
+         }
+         rollTotal += dataArray[2];
+         damageTotal += dataArray[5];
+         setTimeout(function(){
+            thisDice.removeClass('roll');
+            sweetAlert({title:"Roll: " + rollTotal + "\nDamage: " + damageTotal, confirmButtonColor:"#4e5b6d", confirmButtonText:"OK"});
+         },300);
+      }
+   };
+</script>

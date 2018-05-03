@@ -1,0 +1,61 @@
+<div class="row userWindow">
+   <div class="col-md-6 mx-auto">
+      <div class="card card-body">
+         <h2 class="text-center">Create Custom Roll</h2>
+         <form method="post" action="/users/add">
+            <div class="form-group">
+               <label for="name"><p>Name of Custom Roll</p></label>
+               <input type="text" class="form-control" name="name" placeholder="..." required>
+            </div>
+            <div class="form-group">
+               <label for="number"><p>Number Of Dice</p></label>
+               <input type="text" class="form-control" name="number" value="1" placeholder="1">
+            </div>
+            <div class="form-group">
+               <label for="type"><p>Dice Type</p></label>
+               <select id="diceType" name="type">
+                  <option value="20"><p>d20</p></option>
+                  <option value="12"><p>d12</p></option>
+                  <option value="10"><p>d10</p></option>
+                  <option value="8"><p>d8</p></option>
+                  <option value="6"><p>d6</p></option>
+                  <option value="4"><p>d4</p></option>
+                  <option value="100"><p>d100</p></option>
+               </select>
+            </div>
+            <div class="form-group">
+               <label for="modifier"><p>Modifier</p></label>
+               <input type="text" class="form-control" name="modifier" value="0" placeholder="0">
+            </div>
+            <div style="height: 20px;"></div>
+            <h2 class="text-center">Add Damage Roll (Optional)</h2>
+            <div class="form-group">
+               <label for="damageNumber"><p>Number Of Dice</p></label>
+               <input type="text" class="form-control" name="damageNumber" value="1" placeholder="1">
+            </div>
+            <div class="form-group">
+               <label for="type"><p>Dice Type</p></label>
+               <select id="diceType" name="damageType">
+                  <option value="4"><p>d4</p></option>
+                  <option value="6"><p>d6</p></option>
+                  <option value="8"><p>d8</p></option>
+                  <option value="10"><p>d10</p></option>
+                  <option value="12"><p>d12</p></option>
+                  <option value="20"><p>d20</p></option>
+                  <option value="100"><p>d100</p></option>
+               </select>
+            </div>
+            <div class="form-group">
+               <label for="damageModifier"><p>Modifier</p></label>
+               <input type="text" class="form-control" name="damageModifier" value="0" placeholder="0">
+            </div>
+            <div class="form-group">
+               <input type="checkbox" id="damage" name="includeDamage">
+               <label for="coding"><p>Include Damage Roll?</p></label>
+            </div>
+            <div style="height: 20px;"></div>
+            <button class="accent" type="submit" name="button"><p>Submit</p></button>
+         </form>
+      </div>
+   </div>
+</div>

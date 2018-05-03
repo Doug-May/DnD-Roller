@@ -1,0 +1,40 @@
+<div class="container text-center">
+   <img id="dice" src="img/d20.png" alt="">
+   <div id="inputs">
+      <input id="number" type="text" name="number" placeholder="1">
+      <select id="diceType" name="cars" onchange="typeUpdate(this.value)">
+         <option value="20"><p>d20</p></option>
+         <option value="12"><p>d12</p></option>
+         <option value="10"><p>d10</p></option>
+         <option value="8"><p>d8</p></option>
+         <option value="6"><p>d6</p></option>
+         <option value="4"><p>d4</p></option>
+         <option value="100"><p>d100</p></option>
+      </select>
+      <p>+</p>
+      <input id="modifier" type="text" name="modifier" placeholder="0">
+      <h3 id="clear" style="display:inline; cursor:pointer;">CLEAR<h3>
+   </div>
+
+   <h2 id="message">That's a lot of dice! Why not just take the average?</h2>
+
+
+
+
+         <div class="rollData" id="history">
+            <h1>Recent Rolls</h1>
+            <h2 id="0">Make your first roll</h2>
+            <h2 id="1"></h2>
+            <h2 id="2"></h2>
+            <h2 id="3"></h2>
+            <h2 id="4"></h2>
+         </div>
+
+
+
+
+
+</div>
+
+<!--    Links to my JS-->
+    <script src="/js/dice.js"></script>
