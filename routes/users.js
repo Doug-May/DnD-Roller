@@ -24,7 +24,7 @@ router.get('/saved', ensureAuthenticated, (req, res) => {
    Roll.find({user: req.user.id})
    .sort({name:'desc'})
    .then(rolls => {
-      if(rolls.length > 4){
+      if(rolls.length > 7){
          res.render('saved',{
             rolls: rolls,
             hideCreateButton: true
@@ -62,7 +62,7 @@ router.get('/add', ensureAuthenticated, (req, res) => {
    Roll.find({user: req.user.id})
    .sort({name:'desc'})
    .then(rolls => {
-      if(rolls.length > 4){
+      if(rolls.length > 7){
          res.render('saved',{
             rolls: rolls,
             tooManyItems: true
